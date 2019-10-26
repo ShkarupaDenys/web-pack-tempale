@@ -1,0 +1,302 @@
+.discuss-project {
+    padding-bottom: 78px;
+    .section-caption {
+        margin-top: 145px;
+        &:after {
+            display: none;
+        }
+        &.section-caption_red {
+            margin-top: 0;
+        }
+    }
+    .discuss-project__caption {
+        @include second-font-middle-bold;
+        color: $light-black;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        margin-top: 25px;
+        .discuss-project__caption_red {
+            color: $main-color;
+        }
+    }
+    .request__price-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 21px;
+    }
+    .request__price {
+        position: relative;
+        margin-top: 30px;
+        &:hover {
+            cursor: pointer;
+        }
+        &:hover .request__price-svg-wrap {
+            border: none;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        &:hover .request__price-svg path {
+            fill-opacity: 1;
+        }
+        &:hover .request__price-text {
+            color: $light-black;
+        }
+        input:checked + .request__icon-label {
+            .request__price-svg-wrap {
+                border: none;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            }
+        }
+        input:checked + .request__icon-label {
+            .request__price-svg path {
+                fill-opacity: 1;
+            }
+        }
+        input:checked + .request__icon-label {
+            .request__price-text {
+                color: $light-black;
+            }
+        }
+    }
+    .request__price-icon-input {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .request__icon-label {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .request__price-svg-wrap {
+        border: 1px solid rgba(34, 34, 34, 0.2);
+        box-sizing: border-box;
+        width: 120px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .request__price-svg {
+        height: 71px;
+    }
+    .request__price-text {
+        color: rgba(34, 34, 34, 0.35);
+        font-size: 18px;
+        line-height: 25px;
+        @include main-font;
+        width: 100%;
+        text-align: center;
+        margin-top: 19px;
+    }
+    .request__inner-wrapper {
+        padding-top: 30px;
+    }
+    .request__label {
+        position: relative;
+        display: block;
+        &:nth-child(1) {
+            .request__input {
+                // margin-top: 50px;
+            }
+        }
+        .request__input-focus {
+            opacity: 0;
+            margin: 0 0 0 20px;
+            position: absolute;
+            top: 4px;
+            // top: 20px;
+            left: 0;
+            @include main-font;
+            font-size: 14px;
+            line-height: 23px;
+            color: $light-black;
+            padding: 0 4px;
+            background: #fff;
+            span {
+                color: $main-color;
+            }
+        }
+        .request__input:focus + .request__input-focus {
+            opacity: 1;
+        }
+    }
+    .request__input {
+        @include input;
+        margin-top: 15px;
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+            }
+        }
+    }
+    .button {
+        margin-top: 20px;
+    }
+    .consultation {
+        background: #F2F2F2;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 345px;
+        height: 366px;
+        margin-top: 105px;
+    }
+    .consultation__header {
+        height: 50%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        position: relative;
+    }
+    .consultation__img {
+        position: absolute;
+        bottom: 0;
+        width: 279px;
+        height: 249px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .consultation__content {
+        padding: 13px 20px 16px 26px;
+    }
+    .consultation__text {
+        @include main-font-bold;
+        color: $light-black;
+        font-weight: bold;
+        font-size: 19px;
+        line-height: 31px;
+    }
+    .consultation__link {
+        @include main-font-bold;
+        color: $main-color;
+        font-size: 30px;
+        line-height: 49px;
+    }
+}
+
+
+
+
+
+
+
+@media (min-width: 375px)
+{
+    .discuss-project {
+        .consultation__img {
+            width: 300px;
+            height: 269px;
+        }
+    }
+}
+@media (min-width: 768px)
+{
+    .discuss-project {
+        .consultation-wrapper {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+@media (min-width: 992px)
+{
+		
+}
+@media (min-width: 1140px)
+{
+
+}
+@media (min-width: 1200px)
+{
+    .discuss-project {
+        padding-bottom: 93px;
+        .section-caption {
+            margin-top: 127px;
+        }
+        .discuss-project__caption {
+            text-align: left;
+            font-size: 40px;
+            line-height: 49px;
+            margin-top: 61px;
+        }
+        .request__price {
+            margin-top: 65px;
+        }
+        .request__inner-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 55px;
+            padding-top: 0;
+        }
+        .request__label {
+            .request__input-focus {
+                top: 20px;
+            }
+        }
+        .request__input {
+            width: 350px;
+            margin-top: 33px;
+            &:nth-child(1) {
+                margin-top: 33px;
+            }
+        }
+        .button {
+            margin-top: 33px;
+            width: 350px;
+        }
+        .consultation-wrapper {
+            align-items: flex-end;
+        }
+        .consultation {
+            margin-top: 0;
+            height: 400px;
+            max-width: 331px;
+        }
+        .consultation__content {
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .consultation__img {
+            width: 287.91px;
+            height: 268.32px;
+        }
+    }
+}
+@media (min-width: 1366px)
+{
+
+}
+@media (min-width: 1920px)
+{
+    .discuss-project {
+        padding-bottom: 150px;
+        .section-caption {
+            margin-top: 197px;
+        }
+        .request {
+            max-width: 810px;
+        }
+        .request__inner-wrapper {
+            margin-top: 60px;
+        }
+        .request__input {
+            width: 390px;
+            margin-top: 30px;
+            font-size: 18px;
+            line-height: 29px;
+            &:nth-child(1) {
+                margin-top: 30px;
+            }
+        }
+        .button {
+            width: 390px;
+            margin-top: 30px;
+        }
+    }
+}

@@ -1,0 +1,343 @@
+/* mixins
+* Generates the image in either standard size or retina display version
+*/
+
+@mixin main-font {
+	font-family: 'OpenSans';
+}
+
+@mixin main-font-bold {
+	font-family: 'OpenSans-Bold';
+}
+
+@mixin second-font {
+	font-family: 'Montserrat-Regular';
+}
+
+@mixin second-font-bold {
+	font-family: 'Montserrat-Bold';
+}
+
+@mixin second-font-middle-bold {
+	font-family: 'Montserrat-Middle-Bold';
+}
+
+@mixin text-grey {
+	@include main-font;
+	font-size: 14px;
+	line-height: 23px;
+	letter-spacing: -0.03em;
+	color: $grey;
+}
+
+@mixin transition {
+	transition: all 1s linear;
+}
+
+@mixin main-text {
+	@include main-font;
+	font-size: 14px;
+	line-height: 190.65%;
+	color: $grey;
+}
+
+@mixin main-caption {
+	text-transform: uppercase;
+	@include second-font-bold;
+	font-weight: 900;
+	font-size: 38px;
+	text-align: center;
+	color: $light-black;
+	line-height: 51px;
+	margin-bottom: 0;
+}
+
+@mixin section-caption {
+	text-transform: uppercase;
+	@include second-font-bold;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 29px;
+	text-align: center;
+	&:after {
+		content: '-';
+		color: $main-color;
+		display: inline;
+	}
+	&.section-caption_white {
+		color: #fff;
+	}
+	&.section-caption_red {
+		color: $main-color;
+	}
+}
+
+@mixin list-item {
+	@include main-font;
+	color: $black;
+	font-size: 16px;
+	line-height: 22px;
+	letter-spacing: 0.11em;
+	font-weight: normal;
+}
+
+@mixin button {
+	width: 100%;
+	height: 60px;
+	border: none;
+	border: 1px solid $main-color;
+	box-sizing: border-box;
+	@include second-font-middle-bold;
+	background: $main-color;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	padding: 0;
+	color: #fff;
+	&.button-small {
+		font-size: 14px;
+		line-height: 17px;
+		height: 46px;
+	}
+	&.button-transparent {
+		background: transparent;
+		border: 1px solid $light-black;
+		color: $light-black;
+	}
+	&.button-transparent-white {
+		color: #fff;
+		border: 1px solid #fff;
+		background: transparent;
+	}
+	@media (min-width: 1920px)
+	{
+		font-size: 18px;
+	}
+}
+
+@mixin input {
+	border: none;
+	background: #FFFFFF;
+	border: 1px solid rgba(34, 34, 34, 0.2);
+	box-sizing: border-box;
+	font-size: 16px;
+	line-height: 163.42%;
+	@include main-font;
+	padding: 16px 29px;
+	height: 60px;
+	color: $light-black;
+	width: 100%;
+}
+
+// @mixin button-color {
+// 	width: 100%;
+// 	height: 60px;
+// 	border: none;
+// 	border: 1px solid $main-color;
+// 	box-sizing: border-box;
+// 	@include second-font-middle-bold;
+// 	background: $main-color;
+// 	font-style: normal;
+// 	font-weight: bold;
+// 	line-height: 20px;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	letter-spacing: 0.04em;
+// 	text-transform: uppercase;
+// 	padding: 0;
+// 	color: #fff;
+// }
+
+
+
+
+
+@media (min-width: 576px)
+{
+		
+}
+@media (min-width: 768px)
+{
+		
+}
+@media (min-width: 992px)
+{
+		
+}
+@media (min-width: 1140px)
+{
+
+}
+@media (min-width: 1200px)
+{
+
+}
+@media (min-width: 1366px)
+{
+
+}
+@media (min-width: 1920px)
+{
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@mixin imgRetina($image, $extension, $bg-color: $theme-third-color, $width: 0, $height: 0, $position: center, $repeat: no-repeat) {
+	background: $theme-third-color url( '~/static/' + $image + '.' + $extension) $repeat $position;
+
+	@media screen and (-webkit-min-device-pixel-ratio: 2),
+	screen and (min--moz-device-pixel-ratio: 2),
+	screen and (-moz-min-device-pixel-ratio: 2),
+	screen and (-o-min-device-pixel-ratio: 2/1),
+	screen and (min-device-pixel-ratio: 2),
+	screen and (min-resolution: 192dpi),
+	screen and (min-resolution: 2dppx) {
+		background: $theme-third-color url( '~/static/' + $image + '@2x' + '.' + $extension) $repeat $position;
+		@if($width == 0 && $height == 0) {
+			background-size: cover;
+		} @else {
+			background-size: $width $height;
+		}
+	}
+}
+
+@mixin transition {
+	transition: all .2s ease-in-out;
+}
+
+@mixin hover-shadow {
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	&:hover {
+		box-shadow: 0 0.2rem 0.4rem -0.1rem rgba(0, 0, 0, 0.2), 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.14), 0 0.1rem 1rem 0 rgba(0,0,0,.12);
+	}
+}
+
+@mixin font-bold {
+	font-family: 'GothamProBold', sans-serif;
+}
+
+@mixin font-medium {
+	font-family: 'GothamProMedium', sans-serif;
+}
+
+@mixin font-light {
+	font-family: 'GothamProLight', sans-serif;
+}
+
+@mixin font-italic {
+	font-family: 'GothamProItalic', sans-serif;
+}
+
+@mixin font-default {
+	font-family: 'GothamProRegular', sans-serif;
+}
+
+@mixin reset-link-styles {
+	text-decoration: none;
+	&:hover, &.active, &:visited {
+		text-decoration: none;
+	}
+}
+
+@mixin reset-button-styles {
+	box-shadow: none;
+	border: none;
+	outline: none;
+	background: transparent;
+	&:focus {
+		outline: none;
+	}
+}
+
+@mixin reset-input-styles {
+	margin:0;
+	padding:0;
+	display:inline-block;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:1;
+	box-shadow: none;
+	outline: none;
+	border: none;
+	&:focus {
+		outline: none;
+	}
+}
+
+@mixin theme-button-styles {
+	border: none;
+	outline: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem 4rem;
+	border-radius: 1rem;
+	background: $theme-primary-color;
+	text-decoration: none;
+	cursor: pointer;
+	color: $white;
+	line-height: 1.2;
+	@include reset-link-styles;
+	@include hover-shadow;
+	@include transition;
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		color: $white;
+		text-decoration: none;
+	}
+	&--bg-third {
+		background: $theme-third-color;
+	}
+	&--bg-white {
+		background: $white;
+		color: $theme-primary-color;
+		&:hover {
+			color: $theme-primary-color;
+		}
+	}
+	&--default {
+		font-size: 1.6rem;
+		line-height: 1.12;
+	}
+	&--medium {
+		font-size: 1.8rem;
+		line-height: 1.12;
+	}
+	&--wide {
+		width: 25rem;
+	}
+	&--outline {
+		border: 0.2rem solid $theme-primary-color;
+		background: transparent;
+		color: #000;
+		&:hover {
+			border: 0.2rem solid $theme-third-color;
+		}
+	}
+}
+

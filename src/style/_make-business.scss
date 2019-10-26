@@ -1,0 +1,108 @@
+.make-business {
+    background: #333333;
+    padding-bottom: 49px;
+    position: relative;
+    overflow: hidden;
+    &.make-business_mg {
+        margin-top: 40px;
+    }
+    .section-caption {
+        margin-top: 48px;
+        max-width: 948px;
+        &:after {
+            display: none;
+        }
+    }
+    .make-business__description {
+        margin-top: 30px;
+        height: 212px;
+        overflow-y: scroll;
+    }
+    .button {
+        margin-top: 30px;
+    }
+    .make-business__logo {
+        position: absolute;
+        bottom: -226px;
+        left: -9px;
+        display: none;   
+    }
+}
+
+
+@media (min-width: 576px)
+{
+		
+}
+@media (min-width: 768px)
+{
+    .make-business {
+        .button {
+            max-width: 330px;
+        }
+    }
+}
+@media (min-width: 992px)
+{
+		
+}
+@media (min-width: 1140px)
+{
+
+}
+@media (min-width: 1200px)
+{
+    .make-business {
+        padding-bottom: 160px;
+        &.make-business_mg {
+            margin-top: 117px;
+        }
+        .make-business__logo {
+            display: block;
+        }
+        .make-business__description {
+            max-width: 504px;
+            margin-top: 73px;
+            transform: translateX(-96px);
+        }
+        .section-caption {
+            margin-top: 125px;
+        }
+        .button {
+            margin-top: 35px;
+        }
+    }
+}
+@media (min-width: 1366px)
+{
+
+}
+@media (min-width: 1920px)
+{
+    .make-business {
+        &.make-business_mg {
+            margin-top: 160px;
+        }
+        .section-caption {
+            margin-top: 185px;
+            max-width: initial;
+        }
+        .make-business__description {
+            transform: translateX(96px);
+            max-width: 518px;
+            margin-top: 105px;
+        }
+        .make-business__button-wrap {
+            display: flex;
+            justify-content: space-between;
+        }
+        .button {
+            margin-top: 121px;
+        }
+        .make-business__logo {
+            bottom: -182px;
+            left: 93px;
+            transform: scale(1.4);
+        }
+    }
+}
